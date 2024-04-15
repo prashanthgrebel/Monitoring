@@ -36,3 +36,5 @@ services:
         #- '--enable-feature=agent'
 
 ```
+![image](https://github.com/prashanthgrebel/Monitoring/assets/92351464/07e2ed58-3787-4b9a-89c7-9bfbce25395b)
+
