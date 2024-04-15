@@ -13,3 +13,26 @@ docker run \
     -v prometheus-data:/prometheus \
     prom/prometheus
 ```
+# OR
+```
+version: '3'
+volumes:
+  prometheus_data:
+services:
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    volumes:
+      - ./prometheus/:/etc/prometheus/
+      - prometheus_data:/prometheus
+    ports:
+      - "9091:9090"
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+        #- '--storage.agent.path=/prometheus'
+        #- '--web.console.libraries=/etc/prometheus/console_libraries'
+        #- '--web.console.templates=/etc/prometheus/consoles'
+        #- '--web.enable-lifecycle'
+        #- '--enable-feature=agent'
+
+```
